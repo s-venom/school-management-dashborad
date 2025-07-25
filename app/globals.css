@@ -1,0 +1,235 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 12 26 43; /* Deep navy from landing */
+    --foreground: 248 250 252;
+    --card: 15 23 42; /* Slate-800 equivalent */
+    --card-foreground: 248 250 252;
+    --popover: 15 23 42;
+    --popover-foreground: 248 250 252;
+    --primary: 0 191 255; /* Electric blue */
+    --primary-foreground: 15 23 42;
+    --secondary: 30 41 59; /* Slate-700 */
+    --secondary-foreground: 248 250 252;
+    --muted: 30 41 59;
+    --muted-foreground: 148 163 184;
+    --accent: 59 130 246; /* Blue-500 */
+    --accent-foreground: 248 250 252;
+    --destructive: 239 68 68;
+    --destructive-foreground: 248 250 252;
+    --border: 51 65 85; /* Slate-600 */
+    --input: 30 41 59;
+    --ring: 0 191 255;
+    --radius: 0.75rem;
+    --chart-1: 34 197 94; /* Green-500 */
+    --chart-2: 59 130 246; /* Blue-500 */
+    --chart-3: 168 85 247; /* Purple-500 */
+    --chart-4: 249 115 22; /* Orange-500 */
+    --chart-5: 236 72 153; /* Pink-500 */
+
+    /* Sidebar variables - matching landing page */
+    --sidebar-background: 12 26 43; /* Deep navy */
+    --sidebar-foreground: 248 250 252;
+    --sidebar-primary: 0 191 255; /* Electric blue */
+    --sidebar-primary-foreground: 15 23 42;
+    --sidebar-accent: 30 41 59;
+    --sidebar-accent-foreground: 248 250 252;
+    --sidebar-border: 51 65 85;
+    --sidebar-ring: 0 191 255;
+
+    /* Landing page specific colors */
+    --electric-blue: 0 191 255;
+    --safety-green: 165 241 43;
+    --neon-orange: 255 165 0;
+    --deep-navy: 12 26 43;
+  }
+
+  .dark {
+    --background: 12 26 43;
+    --foreground: 248 250 252;
+    --card: 15 23 42;
+    --card-foreground: 248 250 252;
+    --popover: 15 23 42;
+    --popover-foreground: 248 250 252;
+    --primary: 0 191 255;
+    --primary-foreground: 15 23 42;
+    --secondary: 30 41 59;
+    --secondary-foreground: 248 250 252;
+    --muted: 30 41 59;
+    --muted-foreground: 148 163 184;
+    --accent: 59 130 246;
+    --accent-foreground: 248 250 252;
+    --destructive: 239 68 68;
+    --destructive-foreground: 248 250 252;
+    --border: 51 65 85;
+    --input: 30 41 59;
+    --ring: 0 191 255;
+    --chart-1: 34 197 94;
+    --chart-2: 59 130 246;
+    --chart-3: 168 85 247;
+    --chart-4: 249 115 22;
+    --chart-5: 236 72 153;
+
+    --sidebar-background: 12 26 43;
+    --sidebar-foreground: 248 250 252;
+    --sidebar-primary: 0 191 255;
+    --sidebar-primary-foreground: 15 23 42;
+    --sidebar-accent: 30 41 59;
+    --sidebar-accent-foreground: 248 250 252;
+    --sidebar-border: 51 65 85;
+    --sidebar-ring: 0 191 255;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    background: linear-gradient(135deg, rgb(12, 26, 43) 0%, rgb(30, 58, 138) 50%, rgb(12, 26, 43) 100%);
+    min-height: 100vh;
+  }
+}
+
+/* Custom gradient backgrounds */
+.gradient-bg {
+  background: linear-gradient(135deg, rgb(12, 26, 43) 0%, rgb(30, 58, 138) 50%, rgb(12, 26, 43) 100%);
+}
+
+.card-gradient {
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.8) 0%, rgba(30, 41, 59, 0.6) 100%);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(51, 65, 85, 0.3);
+}
+
+/* Electric blue glow effect */
+.electric-glow {
+  box-shadow: 0 0 20px rgba(0, 191, 255, 0.3);
+}
+
+.electric-glow:hover {
+  box-shadow: 0 0 30px rgba(0, 191, 255, 0.5);
+}
+
+/* Safety green accent */
+.safety-green {
+  color: rgb(165, 241, 43);
+}
+
+.safety-green-bg {
+  background-color: rgba(165, 241, 43, 0.1);
+  border-color: rgba(165, 241, 43, 0.3);
+}
+
+/* Neon orange accent */
+.neon-orange {
+  color: rgb(255, 165, 0);
+}
+
+.neon-orange-bg {
+  background-color: rgba(255, 165, 0, 0.1);
+  border-color: rgba(255, 165, 0, 0.3);
+}
+
+/* Custom animations */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes pulse-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 10px rgba(0, 191, 255, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(0, 191, 255, 0.6);
+  }
+}
+
+.animate-slide-in {
+  animation: slideIn 0.3s ease-out;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.2s ease-out;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Smooth transitions for interactive elements */
+.transition-all {
+  transition: all 0.2s ease-in-out;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(30, 41, 59);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(0, 191, 255);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(59, 130, 246);
+}
+
+/* PWA specific styles */
+@media (display-mode: standalone) {
+  body {
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+  }
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  .sidebar-content {
+    padding: 0.5rem;
+  }
+
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Focus styles for accessibility */
+.focus-visible:focus-visible {
+  outline: 2px solid rgb(0, 191, 255);
+  outline-offset: 2px;
+}
+
+/* Glassmorphism effect */
+.glass-effect {
+  background: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(51, 65, 85, 0.3);
+}
